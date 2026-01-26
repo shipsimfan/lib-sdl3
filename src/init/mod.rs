@@ -18,9 +18,11 @@
 //! [`SDL_SetAppMetadataProperty`].
 
 mod constants;
+mod enumerations;
 mod functions;
 mod types;
 
 pub use constants::*;
+pub use enumerations::*;
 pub use functions::*;
 pub use types::*;

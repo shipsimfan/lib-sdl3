@@ -1,15 +1,21 @@
 mod get_app_metadata_property;
 mod init;
 mod init_sub_system;
+mod is_main_thread;
 mod quit;
 mod quit_sub_system;
+mod run_on_main_thread;
 mod set_app_metadata;
 mod set_app_metadata_property;
+mod was_init;
 
 pub use get_app_metadata_property::SDL_GetAppMetadataProperty;
 pub use init::SDL_Init;
 pub use init_sub_system::SDL_InitSubSystem;
+pub use is_main_thread::SDL_IsMainThread;
 pub use quit::SDL_Quit;
 pub use quit_sub_system::SDL_QuitSubSystem;
+pub use run_on_main_thread::SDL_RunOnMainThread;
 pub use set_app_metadata::SDL_SetAppMetadata;
 pub use set_app_metadata_property::SDL_SetAppMetadataProperty;
+pub use was_init::SDL_WasInit;

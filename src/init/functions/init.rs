@@ -3,7 +3,7 @@ use crate::SDL_InitFlags;
 // rustdoc imports
 #[allow(unused_imports)]
 use crate::{
-    SDL_GetError, SDL_InitSubSystem, SDL_Quit, SDL_QuitSubSystem, SDL_SetAppMetadata,
+    SDL_GetError, SDL_InitSubSystem, SDL_Log, SDL_Quit, SDL_QuitSubSystem, SDL_SetAppMetadata,
     SDL_SetAppMetadataProperty, SDL_INIT_AUDIO, SDL_INIT_CAMERA, SDL_INIT_EVENTS, SDL_INIT_GAMEPAD,
     SDL_INIT_HAPTIC, SDL_INIT_JOYSTICK, SDL_INIT_SENSOR, SDL_INIT_VIDEO,
 };
@@ -30,7 +30,7 @@ extern "C" {
     /// showing an error dialog when [`SDL_Init`] fails. You must specifically initialize other
     /// subsystems if you use them in your application.
     ///
-    /// Logging (such as [`SDL_Log`]) works without initialization, too.
+    // /// Logging (such as [`SDL_Log`]) works without initialization, too.
     ///
     /// `flags` may be any of the following OR'd together:
     ///  - [`SDL_INIT_AUDIO`]: audio subsystem; automatically initializes the events subsystem

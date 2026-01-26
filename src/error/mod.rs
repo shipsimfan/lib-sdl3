@@ -19,5 +19,6 @@
 //! [`SDL_SetError`], so errors simply propagate through.
 
 mod functions;
+mod macros;
 
 pub use functions::*;
