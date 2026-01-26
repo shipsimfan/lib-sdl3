@@ -10,8 +10,10 @@ pub mod error;
 pub mod events;
 pub mod init;
 pub mod log;
+pub mod video;
 
 pub use error::*;
 pub use events::*;
 pub use init::*;
 pub use log::*;
+pub use video::*;

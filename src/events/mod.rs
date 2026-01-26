@@ -20,6 +20,8 @@
 //! events onto the queue for later retrieval; [`SDL_RegisterEvents`] can guarantee that these
 //! events have a type that isn't in use by other parts of the system.
 
+mod enumerations;
 mod structures;
 
+pub use enumerations::*;
 pub use structures::*;

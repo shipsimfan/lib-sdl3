@@ -1,3 +1,11 @@
+use crate::{
+    SDL_ClipboardEvent, SDL_CommonEvent, SDL_DisplayEvent, SDL_DropEvent, SDL_WindowEvent,
+};
+
+// rustdoc imports
+#[allow(unused_imports)]
+use crate::SDL_EventType;
+
 /// The structure for all events in SDL.
 ///
 /// # Remarks
@@ -81,6 +89,8 @@
 /// claim for itself, and you should use [`SDL_RegisterEvents`] to claim a unique number that other
 /// parts of your app won't also claim.
 #[repr(C)]
+#[derive(Debug, Clone)]
+#[allow(non_camel_case_types)]
 pub union SDL_Event {
     /// Event type, shared with all events, [`u32`] to cover user events which are not in the
     /// [`SDL_EventType`] enumeration
