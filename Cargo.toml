@@ -1,0 +1,9 @@
+[package]
+name = "sdl3"
+version = "0.1.0"
+authors = ["Lance Hart <me@lancehart.ca>"]
+edition = "2021"
+description = "SDL3 raw bindings"
+repository = "https://github.com/shipsimfan/lib-sdl3"
+license = "GPL-3.0-or-later"
+publish = false
