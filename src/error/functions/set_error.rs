@@ -16,7 +16,7 @@ extern "C" {
     ///
     /// This function always returns `false`, since SDL frequently uses `false` to signify a
     /// failing result, leading to this idiom:
-    /// ```rust
+    /// ```no_run
     /// if error_code {
     ///    return SDL_SetError("This operation has failed: %d", error_code);
     /// }

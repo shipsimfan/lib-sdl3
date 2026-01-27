@@ -1,5 +1,13 @@
 use crate::{
-    SDL_ClipboardEvent, SDL_CommonEvent, SDL_DisplayEvent, SDL_DropEvent, SDL_WindowEvent,
+    SDL_AudioDeviceEvent, SDL_CameraDeviceEvent, SDL_ClipboardEvent, SDL_CommonEvent,
+    SDL_DisplayEvent, SDL_DropEvent, SDL_GamepadAxisEvent, SDL_GamepadButtonEvent,
+    SDL_GamepadDeviceEvent, SDL_GamepadSensorEvent, SDL_GamepadTouchpadEvent, SDL_JoyAxisEvent,
+    SDL_JoyBallEvent, SDL_JoyBatteryEvent, SDL_JoyButtonEvent, SDL_JoyDeviceEvent, SDL_JoyHatEvent,
+    SDL_KeyboardDeviceEvent, SDL_KeyboardEvent, SDL_MouseButtonEvent, SDL_MouseDeviceEvent,
+    SDL_MouseMotionEvent, SDL_MouseWheelEvent, SDL_PenAxisEvent, SDL_PenButtonEvent,
+    SDL_PenMotionEvent, SDL_PenProximityEvent, SDL_PenTouchEvent, SDL_PinchFingerEvent,
+    SDL_QuitEvent, SDL_RenderEvent, SDL_SensorEvent, SDL_TextEditingCandidatesEvent,
+    SDL_TextEditingEvent, SDL_TextInputEvent, SDL_TouchFingerEvent, SDL_UserEvent, SDL_WindowEvent,
 };
 
 // rustdoc imports
@@ -21,13 +29,13 @@ use crate::SDL_EventType;
 /// Reading events from the event queue is done with either [`SDL_PollEvent`] or
 /// [`SDL_PeepEvents`]. We'll use [`SDL_PollEvent`] and step through an example. First off, we
 /// create an empty [`SDL_Event`] structure.
-/// ```rust
+/// ```no_run
 /// let test_event = SDL_Event::default();
 /// ```
 ///
 /// [`SDL_PollEvent`] removes the next event from the event queue. If there are no events on the
 /// queue it returns 0, otherwise it returns 1. We use a while loop to process each event in turn.
-/// ```rust
+/// ```no_run
 /// while SDL_PollEvent(&test_event) {
 /// ```
 ///
@@ -36,7 +44,7 @@ use crate::SDL_EventType;
 /// queue then the event information will be placed in our `test_event` structure, but we also know
 /// that the type of event will be placed in the type member of `test_event`. So to handle each
 /// event type separately we use a match statement.
-/// ```rust
+/// ```no_run
 ///     match unsafe { test_event.r#type } {
 /// ```
 ///
@@ -47,12 +55,12 @@ use crate::SDL_EventType;
 /// [`SDL_EventType::MouseMotion`] events are handled within the [`SDL_MouseMotionEvent`] structure
 /// which is the `motion` member of [`SDL_Event`]. We can check for the
 /// [`SDL_EventType::MouseMotion`] event type within our match statement like so:
-/// ```rust
+/// ```no_run
 ///         SDL_EventType::MouseMotion as u32 => {
 /// ```
 ///
 /// All we need to do now is read the information out of the `motion` member of `test_event`.
-/// ```rust
+/// ```no_run
 ///             SDL_Log(c"We got a motion event.".as_ptr());
 ///             SDL_Log(
 ///                 c"Current mouse position is: (%f, %f)".as_ptr(),
@@ -74,7 +82,7 @@ use crate::SDL_EventType;
 /// queue, however you could use it to post fake input events if you wished. Creating your own
 /// events is a simple matter of choosing the event type you want, setting the type member and
 /// filling the appropriate member structure with information.
-/// ```rust
+/// ```no_run
 /// let user_event = SDL_Event::default();
 /// SDL_zero(user_event);  /* SDL will copy this entire struct! Initialize to keep memory checkers
 ///                           happy. */
@@ -89,8 +97,8 @@ use crate::SDL_EventType;
 /// claim for itself, and you should use [`SDL_RegisterEvents`] to claim a unique number that other
 /// parts of your app won't also claim.
 #[repr(C)]
-#[derive(Debug, Clone)]
-#[allow(non_camel_case_types)]
+#[derive(Clone, Copy)]
+#[allow(non_camel_case_types, rustdoc::invalid_rust_codeblocks)]
 pub union SDL_Event {
     /// Event type, shared with all events, [`u32`] to cover user events which are not in the
     /// [`SDL_EventType`] enumeration

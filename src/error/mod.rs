@@ -9,7 +9,7 @@
 //!
 //! A common usage pattern is to have a function that returns `true` for success and `false` for
 //! failure, and do this when something fails:
-//! ```rust
+//! ```no_run
 //! if something_went_wrong {
 //!     return SDL_SetError("The thing broke in this specific way: %d", errcode);
 //! }

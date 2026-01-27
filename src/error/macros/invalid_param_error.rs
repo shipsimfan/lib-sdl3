@@ -9,7 +9,7 @@ use crate::SDL_SetError;
 /// consistency, and clarity.
 ///
 /// A common usage pattern inside SDL is this:
-/// ```rust
+/// ```no_run
 /// fn my_function(str: *const std::ffi::c_char) -> bool {
 ///    if str == std::ptr::null() {
 ///         return SDL_InvalidParamError!(c"str".as_ptr());  // returns false.

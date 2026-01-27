@@ -9,7 +9,7 @@ extern "C" {
     /// It is safe to call this function from any thread.
     ///
     /// # Code Examples
-    /// ```rust
+    /// ```no_run
     /// let error = SDL_GetError();
     /// if error != std::ptr::null() {
     ///     SDL_Log("SDL error: %s", error);
