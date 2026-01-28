@@ -5,7 +5,7 @@ use crate::SDL_InitFlags;
 use crate::{SDL_GetError, SDL_Init};
 
 #[link(name = "SDL3")]
-extern "C" {
+unsafe extern "C" {
     /// Compatibility function to initialize the SDL library.
     ///
     /// # Parameters

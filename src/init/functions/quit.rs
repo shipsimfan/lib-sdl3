@@ -3,7 +3,7 @@
 use crate::SDL_QuitSubSystem;
 
 #[link(name = "SDL3")]
-extern "C" {
+unsafe extern "C" {
     /// Clean up all initialized subsystems.
     ///
     /// # Remarks

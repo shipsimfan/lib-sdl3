@@ -6,7 +6,7 @@ use std::ffi::c_void;
 use crate::SDL_GetError;
 
 #[link(name = "SDL3")]
-extern "C" {
+unsafe extern "C" {
     /// Call a function on the main thread during event processing.
     ///
     /// # Parameters

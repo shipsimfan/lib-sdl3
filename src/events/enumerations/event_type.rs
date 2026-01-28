@@ -1,7 +1,11 @@
+// rustdoc imports
+#[allow(unused_imports)]
+use crate::{SDL_AddEventWatch, SDL_RegisterEvents};
+
+/// The types of events that can be delivered.
 #[repr(C)]
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 #[non_exhaustive]
-#[allow(missing_docs)]
 pub enum SDL_EventType {
     /// Unused (do not remove)
     First = 0,

@@ -15,6 +15,10 @@
 //! creating a window and listening for events, so start with [`SDL_CreateWindow`] and
 //! [`SDL_PollEvent`].
 
+// rustdoc imports
+#[allow(unused_imports)]
+use crate::SDL_PollEvent;
+
 mod types;
 
 pub use types::*;

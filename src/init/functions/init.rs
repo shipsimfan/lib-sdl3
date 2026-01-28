@@ -3,13 +3,13 @@ use crate::SDL_InitFlags;
 // rustdoc imports
 #[allow(unused_imports)]
 use crate::{
-    SDL_GetError, SDL_InitSubSystem, SDL_Log, SDL_Quit, SDL_QuitSubSystem, SDL_SetAppMetadata,
-    SDL_SetAppMetadataProperty, SDL_INIT_AUDIO, SDL_INIT_CAMERA, SDL_INIT_EVENTS, SDL_INIT_GAMEPAD,
-    SDL_INIT_HAPTIC, SDL_INIT_JOYSTICK, SDL_INIT_SENSOR, SDL_INIT_VIDEO,
+    SDL_GetError, SDL_INIT_AUDIO, SDL_INIT_CAMERA, SDL_INIT_EVENTS, SDL_INIT_GAMEPAD,
+    SDL_INIT_HAPTIC, SDL_INIT_JOYSTICK, SDL_INIT_SENSOR, SDL_INIT_VIDEO, SDL_InitSubSystem,
+    SDL_Log, SDL_Quit, SDL_QuitSubSystem, SDL_SetAppMetadata, SDL_SetAppMetadataProperty,
 };
 
 #[link(name = "SDL3")]
-extern "C" {
+unsafe extern "C" {
     /// Initialize the SDL library.
     ///
     /// # Parameters

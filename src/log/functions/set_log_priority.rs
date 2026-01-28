@@ -2,7 +2,7 @@ use crate::SDL_LogPriority;
 use std::ffi::c_int;
 
 #[link(name = "SDL3")]
-extern "C" {
+unsafe extern "C" {
     /// Set the priority of a particular log category.
     ///
     /// # Parameters

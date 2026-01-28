@@ -12,7 +12,7 @@ use crate::{
 
 // rustdoc imports
 #[allow(unused_imports)]
-use crate::SDL_EventType;
+use crate::{SDL_EventType, SDL_PeepEvents, SDL_PollEvent, SDL_PushEvent, SDL_RegisterEvents};
 
 /// The structure for all events in SDL.
 ///

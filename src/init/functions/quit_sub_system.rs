@@ -5,7 +5,7 @@ use crate::SDL_InitFlags;
 use crate::{SDL_Init, SDL_Quit};
 
 #[link(name = "SDL3")]
-extern "C" {
+unsafe extern "C" {
     /// Shut down specific SDL subsystems.
     ///
     /// # Parameters

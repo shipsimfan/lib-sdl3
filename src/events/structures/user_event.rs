@@ -3,7 +3,7 @@ use std::{ffi::c_void, ptr::null_mut};
 
 // rustdoc imports
 #[allow(unused_imports)]
-use crate::SDL_EventType;
+use crate::{SDL_EventType, SDL_PushEvent, SDL_RegisterEvents};
 
 /// A user-defined event type (event.user.*)
 ///

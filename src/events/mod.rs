@@ -21,7 +21,11 @@
 //! events have a type that isn't in use by other parts of the system.
 
 mod enumerations;
+mod functions;
 mod structures;
+mod types;
 
 pub use enumerations::*;
+pub use functions::*;
 pub use structures::*;
+pub use types::*;

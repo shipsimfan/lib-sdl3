@@ -1,5 +1,9 @@
 use std::ffi::{c_char, c_int, c_void};
 
+// rustdoc imports
+#[allow(unused_imports)]
+use crate::SDL_AppResult;
+
 /// Function pointer typedef for SDL_AppInit.
 ///
 /// # Parameters

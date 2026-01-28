@@ -5,7 +5,7 @@ use std::ffi::c_char;
 use crate::{SDL_LogCategory, SDL_LogPriority};
 
 #[link(name = "SDL3")]
-extern "C" {
+unsafe extern "C" {
     /// Log a message with [`SDL_LogCategory::Application`] and [`SDL_LogPriority::Info`].
     ///
     /// # Parameters

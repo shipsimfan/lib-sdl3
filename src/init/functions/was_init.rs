@@ -4,7 +4,7 @@ use crate::SDL_InitFlags;
 #[allow(unused_imports)]
 use crate::SDL_Init;
 
-extern "C" {
+unsafe extern "C" {
     /// Get a mask of the specified subsystems which are currently initialized.
     ///
     /// # Parameters

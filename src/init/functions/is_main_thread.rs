@@ -1,5 +1,5 @@
 #[link(name = "SDL3")]
-extern "C" {
+unsafe extern "C" {
     /// Return whether this is the main thread.
     ///
     /// # Return Value

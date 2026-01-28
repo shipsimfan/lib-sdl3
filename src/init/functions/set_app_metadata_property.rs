@@ -12,7 +12,7 @@ use crate::{
 use std::ptr::null;
 
 #[link(name = "SDL3")]
-extern "C" {
+unsafe extern "C" {
     /// Specify metadata about your app through a set of properties.
     ///
     /// # Parameters

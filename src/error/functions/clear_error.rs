@@ -1,5 +1,5 @@
 #[link(name = "SDL3")]
-extern "C" {
+unsafe extern "C" {
     /// Clear any previous error message for this thread.
     ///
     /// # Return Value

@@ -2,7 +2,7 @@ use crate::{SDL_EventType, SDL_JoystickID};
 
 // rustdoc imports
 #[allow(unused_imports)]
-use crate::SDL_Init;
+use crate::{SDL_Init, SDL_JoyDeviceEvent};
 
 /// Gamepad device event structure (event.gdevice.*)
 ///

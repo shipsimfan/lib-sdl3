@@ -1,5 +1,5 @@
 #[link(name = "SDL3")]
-extern "C" {
+unsafe extern "C" {
     /// Set an error indicating that memory allocation failed.
     ///
     /// # Return Value

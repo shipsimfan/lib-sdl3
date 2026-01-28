@@ -1,7 +1,7 @@
 use std::ffi::c_char;
 
 #[link(name = "SDL3")]
-extern "C" {
+unsafe extern "C" {
     /// Set the SDL error message for the current thread.
     ///
     /// # Parameters

@@ -15,7 +15,6 @@ use crate::SDL_PenAxisEvent;
 #[repr(C)]
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 #[non_exhaustive]
-#[allow(missing_docs)]
 pub enum SDL_PenAxis {
     /// Pen pressure.  Unidirectional: 0 to 1.0
     Pressure,

@@ -12,9 +12,13 @@
 #[repr(C)]
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 #[non_exhaustive]
-#[allow(missing_docs)]
 pub enum SDL_AppResult {
+    /// Value that requests that the app continue from the main callbacks.
     Continue,
+
+    /// Value that requests termination with success from the main callbacks.
     Success,
+
+    /// Value that requests termination with error from the main callbacks.
     Failure,
 }

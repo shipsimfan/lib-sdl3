@@ -7,7 +7,7 @@ use crate::{SDL_SetAppMetadata, SDL_SetAppMetadataProperty};
 use std::ptr::null;
 
 #[link(name = "SDL3")]
-extern "C" {
+unsafe extern "C" {
     /// Get metadata about your app.
     ///
     /// # Parameters

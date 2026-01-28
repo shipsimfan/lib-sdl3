@@ -5,7 +5,7 @@ use std::ffi::c_char;
 use crate::SDL_ClearError;
 
 #[link(name = "SDL3")]
-extern "C" {
+unsafe extern "C" {
     /// Retrieve a message about the last error that occurred on the current thread.
     ///
     /// # Return Value
