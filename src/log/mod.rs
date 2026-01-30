@@ -36,6 +36,8 @@
 
 mod enumerations;
 mod functions;
+mod types;
 
 pub use enumerations::*;
 pub use functions::*;
+pub use types::*;

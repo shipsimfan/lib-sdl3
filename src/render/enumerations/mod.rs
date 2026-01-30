@@ -1,0 +1,3 @@
+mod renderer_logical_presentation;
+
+pub use renderer_logical_presentation::SDL_RendererLogicalPresentation;
