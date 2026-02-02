@@ -7,7 +7,7 @@ use crate::SDL_PixelFormat;
 /// The bits of this structure can be directly reinterpreted as a float-packed color which uses the
 /// [`SDL_PixelFormat::RGBA128Float`] format
 #[repr(C)]
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Copy)]
 #[allow(non_camel_case_types)]
 pub struct SDL_FColor {
     #[allow(missing_docs)]

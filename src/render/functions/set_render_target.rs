@@ -31,5 +31,5 @@ unsafe extern "C" {
     ///
     /// # Thread Safety
     /// This function should only be called on the main thread.
-    pub fn SDL_SetRenderTarget(renderer: *mut *mut SDL_Renderer, texture: *mut SDL_Texture);
+    pub fn SDL_SetRenderTarget(renderer: *mut SDL_Renderer, texture: *mut SDL_Texture) -> bool;
 }
