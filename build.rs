@@ -6,19 +6,24 @@ fn main() {
 
     if target.contains("windows") {
         // Check for platform
-        if !target.contains("windows-msvc") {
-            panic!("building for Windows only supports MSVC");
-        }
+        let (platform, library_name) = if target.contains("windows-msvc") {
+            ("windows-msvc", "SDL3.dll")
+        } else if target.contains("linux-gnu") {
+            ("linux-gnu", "libSDL3.so")
+        } else {
+            panic!("building for an unsupported operating system");
+        };
 
-        if !target.starts_with("x86_64-") {
-            panic!("building for Windows only supports x86-64");
-        }
+        let architecture = if target.starts_with("x86_64-") {
+            "x86-64"
+        } else if target.starts_with("aarch64-") {
+            "aarch64"
+        } else {
+            panic!("building for an unsupported architecture");
+        };
 
         // Build directory
-        let lib_dir = manifest_dir
-            .join("deps")
-            .join("windows-msvc")
-            .join("x86-64");
+        let lib_dir = manifest_dir.join("deps").join(platform).join(architecture);
         if !lib_dir.exists() {
             panic!("missing SDL3 library folder at \"{}\"", lib_dir.display());
         }
@@ -35,13 +40,17 @@ fn main() {
             .and_then(|p| p.parent())
             .expect("unexpected OUT_DIR layout");
 
-        let dll_src = lib_dir.join("SDL3.dll");
-        let dll_dst = bin_dir.join("SDL3.dll");
+        let lib_src = lib_dir.join(library_name);
+        let lib_dst = bin_dir.join(library_name);
 
-        if dll_src.exists() {
-            std::fs::copy(&dll_src, &dll_dst).ok();
+        if lib_src.exists() {
+            std::fs::copy(&lib_src, &lib_dst).ok();
         } else {
-            println!("cargo:warning=SDL3.dll not found at {}", dll_src.display());
+            println!(
+                "cargo:warning={} not found at {}",
+                library_name,
+                lib_src.display()
+            );
         }
     }
 }
