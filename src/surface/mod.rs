@@ -13,11 +13,13 @@
 //! different surfaces. You should not try to modify any surface from two threads simultaneously.
 
 mod constants;
+mod enumerations;
 mod functions;
 mod structures;
 mod types;
 
 pub use constants::*;
+pub use enumerations::*;
 pub use functions::*;
 pub use structures::*;
 pub use types::*;

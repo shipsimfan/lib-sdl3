@@ -1,4 +1,5 @@
 mod create_renderer;
+mod create_texture_from_surface;
 mod create_window_and_renderer;
 mod destroy_renderer;
 mod destroy_texture;
@@ -14,8 +15,10 @@ mod set_render_draw_color;
 mod set_render_logical_presentation;
 mod set_render_scale;
 mod set_render_target;
+mod set_texture_scale_mode;
 
 pub use create_renderer::SDL_CreateRenderer;
+pub use create_texture_from_surface::SDL_CreateTextureFromSurface;
 pub use create_window_and_renderer::SDL_CreateWindowAndRenderer;
 pub use destroy_renderer::SDL_DestroyRenderer;
 pub use destroy_texture::SDL_DestroyTexture;
@@ -31,3 +34,4 @@ pub use set_render_draw_color::SDL_SetRenderDrawColor;
 pub use set_render_logical_presentation::SDL_SetRenderLogicalPresentation;
 pub use set_render_scale::SDL_SetRenderScale;
 pub use set_render_target::SDL_SetRenderTarget;
+pub use set_texture_scale_mode::SDL_SetTextureScaleMode;

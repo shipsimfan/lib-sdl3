@@ -39,5 +39,9 @@
 //! The matrix coefficients are used to convert between YCbCr and RGB colors.
 
 mod enumerations;
+mod functions;
+mod structures;
 
 pub use enumerations::*;
+pub use functions::*;
+pub use structures::*;
