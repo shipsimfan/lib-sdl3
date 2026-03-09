@@ -17,7 +17,7 @@ use crate::SDL_SetLogOutputFunction;
 /// This function is called by SDL when there is new text to be logged. A mutex is held so that
 /// this function is never called by more than one thread at once.
 #[allow(non_camel_case_types)]
-pub type SDL_LogOutputFunction = extern "C" fn(
+pub type SDL_LogOutputFunction = unsafe extern "C" fn(
     userdata: *mut c_void,
     category: c_int,
     priority: SDL_LogPriority,

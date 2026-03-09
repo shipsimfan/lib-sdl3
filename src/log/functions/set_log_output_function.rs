@@ -11,5 +11,5 @@ unsafe extern "C" {
     ///
     /// # Thread Safety
     /// It is safe to call this function from any thread.
-    pub fn SDL_SetLogOutputFunction(callback: SDL_LogOutputFunction, userdata: *mut c_void);
+    pub fn SDL_SetLogOutputFunction(callback: Option<SDL_LogOutputFunction>, userdata: *mut c_void);
 }
