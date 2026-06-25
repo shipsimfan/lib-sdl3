@@ -36,7 +36,7 @@
 
 // rustdoc imports
 #[allow(unused_imports)]
-use crate::SDL_EventType;
+use crate::{SDL_EventType, SDL_Surface, SDL_Texture};
 
 mod types;
 

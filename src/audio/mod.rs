@@ -82,6 +82,14 @@
 //! SDL_AudioStream can also be provided channel maps to change this ordering to whatever is
 //! necessary, in other audio processing scenarios.
 
+mod constants;
+mod enumerations;
+mod functions;
+mod structures;
 mod types;
 
+pub use constants::*;
+pub use enumerations::*;
+pub use functions::*;
+pub use structures::*;
 pub use types::*;
