@@ -1,9 +1,11 @@
 mod clear_audio_stream;
+mod convert_audio_samples;
 mod destroy_audio_stream;
 mod flush_audio_stream;
 mod get_audio_stream_available;
 mod get_audio_stream_data;
 mod get_audio_stream_format;
+mod load_wav;
 mod open_audio_device_stream;
 mod pause_audio_stream_device;
 mod put_audio_stream_data;
@@ -11,11 +13,13 @@ mod resume_audio_stream;
 mod set_audio_stream_format;
 
 pub use clear_audio_stream::SDL_ClearAudioStream;
+pub use convert_audio_samples::SDL_ConvertAudioSamples;
 pub use destroy_audio_stream::SDL_DestroyAudioStream;
 pub use flush_audio_stream::SDL_FlushAudioStream;
 pub use get_audio_stream_available::SDL_GetAudioStreamAvailable;
 pub use get_audio_stream_data::SDL_GetAudioStreamData;
 pub use get_audio_stream_format::SDL_GetAudioStreamFormat;
+pub use load_wav::SDL_LoadWAV;
 pub use open_audio_device_stream::SDL_OpenAudioDeviceStream;
 pub use pause_audio_stream_device::SDL_PauseAudioStreamDevice;
 pub use put_audio_stream_data::SDL_PutAudioStreamData;
