@@ -3,15 +3,25 @@ use std::ffi::c_int;
 
 /// Format specifier for audio data.
 #[repr(C)]
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, PartialEq, Eq)]
 #[allow(non_camel_case_types)]
 pub struct SDL_AudioSpec {
     /// Audio data format
-    format: SDL_AudioFormat,
+    pub format: SDL_AudioFormat,
 
     /// Number of channels: 1 mono, 2 stereo, etc
-    channels: c_int,
+    pub channels: c_int,
 
     /// Sample rate: sample frames per second
-    freq: c_int,
+    pub freq: c_int,
+}
+
+impl Default for SDL_AudioSpec {
+    fn default() -> Self {
+        SDL_AudioSpec {
+            format: SDL_AudioFormat::Unknown,
+            channels: 0,
+            freq: 0,
+        }
+    }
 }
