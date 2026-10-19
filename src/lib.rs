@@ -8,6 +8,7 @@
 
 pub mod audio;
 pub mod camera;
+pub mod dialog;
 pub mod error;
 pub mod events;
 pub mod init;
@@ -31,6 +32,7 @@ pub mod video;
 
 pub use audio::*;
 pub use camera::*;
+pub use dialog::*;
 pub use error::*;
 pub use events::*;
 pub use init::*;
